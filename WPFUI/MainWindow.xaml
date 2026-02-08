@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFUI"
         mc:Ignorable="d"
         FontSize="11pt"
-        Title="Scott's Awesome Game" Height="768" Width="1024">
+        Title="Epic RPG Game" Height="768" Width="1024">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -88,7 +88,8 @@
 
                     <TextBlock Grid.Row="2"
                                HorizontalAlignment="Center"
-                               Text="{Binding CurrentLocation.Description}"/>
+                               Text="{Binding CurrentLocation.Description}"
+                               TextWrapping="Wrap"/>
                 </Grid>
 
             </Border>
