@@ -2,14 +2,18 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Engine\Engine.csproj" />
+    <ProjectReference Include="..\SOSCSRPG.Core\SOSCSRPG.Core.csproj" />
+    <ProjectReference Include="..\SOSCSRPG.Models\SOSCSRPG.Models.csproj" />
+    <ProjectReference Include="..\SOSCSRPG.ViewModels\SOSCSRPG.ViewModels.csproj" />
   </ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="xcopy &quot;$(SolutionDir)GameFiles\*.*&quot; &quot;$(ProjectDir)$(OutDir)&quot; /s /y /i" />
+	</Target>
 
 </Project>
